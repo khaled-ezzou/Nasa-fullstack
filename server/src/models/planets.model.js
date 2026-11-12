@@ -16,7 +16,7 @@ function loadPlanetData () {
     //the event emitter
     return new Promise((resolve,reject) => {fs.createReadStream(path.join(__dirname,'..','..','data', 'kepler_data.csv'))
     // Why we need to pipe ?
-    // calling parsing method iimediately, the stream won't delivered any data yet. Streams emit data asynchronously in chunks over time, so piping connects the flow directly to the parser so it can consume each part it arrives.
+    // calling parsing method iimediately, the stream won't delivere any data yet. Streams emit data asynchronously in chunks over time, so piping connects the flow directly to the parser so it can consume each part it arrives.
     // trying to parse immediately would just pass an empty buffer
         .pipe(parse({
             comment:'#',

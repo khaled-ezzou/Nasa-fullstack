@@ -11,6 +11,7 @@ const app = express();
 app.use(cors({
     origin: 'http://localhost:3000'
 }));
+// log requests type,,,, combined is default so you can deatach it
 app.use(morgan('combined'));
 
 app.use(express.json());

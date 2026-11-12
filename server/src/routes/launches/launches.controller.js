@@ -1,4 +1,4 @@
-const {getAllLaunches, addNewLaunch, existsLaunchWithId, abortLaunchById} = require('../../models/launches.model');
+const { getAllLaunches, addNewLaunch, existsLaunchWithId, abortLaunchById } = require('../../models/launches.model');
 
 function httpGetAllLaunches(req, res) {
     return res.status(200).json(getAllLaunches());
@@ -11,7 +11,9 @@ function httpAddNewLaunch(req, res) {
             error: 'Missing required launch property',
         })
     }
+    // same date that is a string is turned into a date object
     launch.launchDate = new Date(launch.launchDate);
+    // isNaN calls date.valueOf() to convert date into a number so if the date is valid we get false 
     if (isNaN(launch.launchDate)) {
         return res.status(400).json({
             error: 'Invalid launch Date',

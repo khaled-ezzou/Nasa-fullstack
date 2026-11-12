@@ -23,9 +23,11 @@ async function httpSubmitLaunch(launch) {
       headers: {
         'Content-Type': "application/json",
       },
+      // data we get from useLaunches and we stringify it because it's an object to send it to the API and if we're passing JSON we need to pass Headers object
       body: JSON.stringify(launch),
     });
   } catch (e) {
+    // edit ok manually here acts as a safety fallback. It ensures the app doesn't crash or hang when a network error happens, treating it safely as an unsuccessful submission
     return {
       ok: false
     };

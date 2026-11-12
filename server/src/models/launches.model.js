@@ -15,7 +15,7 @@ const launch = {
 
 launches.set(launch.flightNumber, launch);
 
-function existsLaunchWithId(launchId) {
+function existsLaunchWithId(launchId) { // returns a boolean
     return launches.has(launchId);
 }
 
@@ -34,7 +34,7 @@ function addNewLaunch (launch) {
 }
 
 function abortLaunchById(launchId) {
-    const aborted = launches.get(launchId);
+    const aborted = launches.get(launchId); // returns the object from the map which is the launch
     aborted.upcoming = false;
     aborted.success = false;
     return aborted;

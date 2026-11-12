@@ -34,6 +34,7 @@ function useLaunches(onSuccessSound, onAbortSound, onFailureSound) {
       target,
     });
 
+    // it dynamically checs whether submition succeeded or failed depending on the server response
     const success = response.ok;
     if (success) {
       getLaunches();
