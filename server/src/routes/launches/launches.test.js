@@ -11,8 +11,6 @@ describe('Test GET /launches', () => {
     });
 });
 
-
-
 describe('Test POST /launches',  () => {
     const completeLaunchData = {
         mission:'SYR Space',
@@ -71,3 +69,4 @@ describe('Test POST /launches',  () => {
         }) 
     });
 })
+
