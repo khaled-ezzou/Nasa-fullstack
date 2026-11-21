@@ -2,12 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const { rejects } = require('assert');
 const {parse} = require('csv-parse');
-const { resolve } = require('dns');
 
-// TODO check this out
-const planetsMongo = require('./planets.mongo');
 const planets = require('./planets.mongo');
 
 // const habitablePlanets = []; we removed it to use our Mongo DB
